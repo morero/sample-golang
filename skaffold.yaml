@@ -3,13 +3,17 @@ kind: Config
 metadata:
   name: sample-golang
 build:
+  local:
+    push: false
   artifacts:
-  - image: busybox
-    docker:
-      dockerfile: Dockerfile
-  - image: registry.demo.ertia.cloud/demo/app
-    buildpacks:
-      builder: gcr.io/buildpacks/builder:v1
+  - image: sample-golang
+    kaniko:
+      cache: {}
+
+deploy:
+  docker:
+    images:[sample-golang]
+
 manifests:
   rawYaml:
-  - manifest.yaml
+  - k8s-*
