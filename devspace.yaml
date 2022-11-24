@@ -79,5 +79,6 @@ commands:
 
 images:
   app:
+    image: john/appbackend
     kaniko:
       cache: true

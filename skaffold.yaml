@@ -1,0 +1,15 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+metadata:
+  name: sample-golang
+build:
+  artifacts:
+  - image: busybox
+    docker:
+      dockerfile: Dockerfile
+  - image: registry.demo.ertia.cloud/demo/app
+    buildpacks:
+      builder: gcr.io/buildpacks/builder:v1
+manifests:
+  rawYaml:
+  - manifest.yaml
