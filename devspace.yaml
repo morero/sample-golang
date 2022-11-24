@@ -1,5 +1,5 @@
 version: v2beta1
-name: sample-golanggit
+name: sample-golang
 
 # This is a list of `pipelines` that DevSpace can execute (you can define your own)
 pipelines:
@@ -79,6 +79,9 @@ commands:
 
 images:
   app:
-    image: john/appbackend
+    image: registry.local.ertia.cloud/sample-golang
+    tags:
+      - latest
     kaniko:
       cache: true
+      insecure: true
