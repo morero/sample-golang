@@ -3,6 +3,8 @@ kind: Config
 metadata:
   name: sample-golang
 build:
+  cluster:
+    namespace: default
   artifacts:
   - image: sample-golang
     kaniko:
@@ -15,4 +17,4 @@ deploy:
 
 manifests:
   rawYaml:
-  - k8s-*
+  - k8s/**
