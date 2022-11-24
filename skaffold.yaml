@@ -3,8 +3,6 @@ kind: Config
 metadata:
   name: sample-golang
 build:
-  local:
-    push: false
   artifacts:
   - image: sample-golang
     kaniko:
@@ -12,7 +10,8 @@ build:
 
 deploy:
   docker:
-    images:[sample-golang]
+    images:
+    - sample-golang
 
 manifests:
   rawYaml:
