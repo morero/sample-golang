@@ -7,6 +7,7 @@ build:
     namespace: default
   artifacts:
   - image: sample-golang
+    platforms: ["linux/amd64"]
     kaniko:
       cache: {}
 
