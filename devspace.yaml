@@ -7,6 +7,9 @@ images:
     image: registry.local.ertia.cloud/${IMAGE}
     tags:
       - ${IMAGE_TAG}
+    build:
+      buildKit:
+        inCluster: {}
 
 vars:
   IMAGE: sample-golang
