@@ -76,3 +76,8 @@ commands:
 #     tag: v1.0.0
 #   ui:
 #     path: ./ui        # Path-based dependencies (for monorepos)
+
+images:
+  app:
+    kaniko:
+      cache: true
