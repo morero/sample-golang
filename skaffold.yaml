@@ -14,7 +14,7 @@ build:
 deploy:
   docker:
     images:
-    - registry-habor-registry.registry.svc.cluster.local:5000/sample-golang
+    - registry-habor-registry.registry:5000/sample-golang
 
 manifests:
   rawYaml:

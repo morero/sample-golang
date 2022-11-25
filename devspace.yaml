@@ -9,6 +9,7 @@ images:
       - ${IMAGE_TAG}
     buildKit:
       inCluster: {}
+    serviceAccount: kaniko-builder
 
 vars:
   IMAGE: sample-golang
