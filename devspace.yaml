@@ -7,9 +7,9 @@ images:
     image: registry.local.ertia.cloud/${IMAGE}
     tags:
       - ${IMAGE_TAG}
-    buildKit:
-      inCluster: {}
-    serviceAccount: kaniko-builder
+    kaniko:
+      #inCluster: {}
+      serviceAccount: kaniko-builder
 
 vars:
   IMAGE: sample-golang
