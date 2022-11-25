@@ -4,18 +4,18 @@ name: sample-golang
 images:
   # By default ./Dockerfile will be used
   app:
-    image: registry.local.ertia.cloud/${IMAGE}
+    image: registry-harbor-registry.registry:5000/${IMAGE}
     tags:
       - ${IMAGE_TAG}
     kaniko:
+      insecure: true
       #inCluster: {}
       serviceAccount: kaniko-builder
 
 pullSecrets:
-- registry: registry.local.ertia.cloud
-  secret: tekton-registry
-  serviceAccounts: 
-    - kaniko-builder
+  registry:
+    registry: registry-harbor-registry.registry:5000
+    secret: tekton-registry
 
 vars:
   IMAGE: sample-golang
