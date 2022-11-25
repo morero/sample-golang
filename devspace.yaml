@@ -9,8 +9,16 @@ images:
       - ${IMAGE_TAG}
     kaniko:
       #inCluster: {}
-      serviceAccount: kaniko-builder-not-exist
+      serviceAccount: kaniko-builder
+
+pullSecrets:
+- registry: registry.local.ertia.cloud
+  secret: tekton-registry
+  serviceAccounts: 
+    - kaniko-builder
 
 vars:
   IMAGE: sample-golang
   IMAGE_TAG: latest
+
+
