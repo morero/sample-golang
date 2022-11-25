@@ -9,7 +9,7 @@ images:
       - ${IMAGE_TAG}
     kaniko:
       #inCluster: {}
-      serviceAccount: kaniko-builder
+      serviceAccount: kaniko-builder-not-exist
 
 vars:
   IMAGE: sample-golang
