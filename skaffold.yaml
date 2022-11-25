@@ -4,7 +4,10 @@ metadata:
   name: sample-golang
 build:
   cluster:
-    namespace: default
+    pullSecretName: tekton-registry
+    pullSecretPath: dockerconfig
+    pullSecretMountPath: dockerconfig
+    namespace: tekton-pipelines
   artifacts:
   - image: registry-harbor-registry.registry:5000/sample-golang
     kaniko:
@@ -12,7 +15,7 @@ build:
       insecure: true
       insecurePull: true
       cleanup: true
-      
+
 
 deploy:
   docker:
