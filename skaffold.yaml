@@ -4,11 +4,10 @@ metadata:
   name: sample-golang
 build:
   cluster:
-    pullSecretName: kaniko-secret
-    pullSecretMountPath: kaniko-secret
+    pullSecretPath: /kaniko/.secret
     namespace: tekton-pipelines
     dockerConfig:
-      secretName: tekton-registry
+      path: /kaniko/.docker
   artifacts:
   - image: registry-harbor-registry.registry:5000/sample-golang
     kaniko:
