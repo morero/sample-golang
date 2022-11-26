@@ -4,7 +4,7 @@ metadata:
   name: sample-golang
 build:
   cluster:
-    pullSecretPath: /kaniko/.secret
+    #pullSecretPath: /kaniko/.secret
     namespace: tekton-pipelines
     dockerConfig:
       path: /kaniko/.docker
