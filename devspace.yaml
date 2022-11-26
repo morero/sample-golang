@@ -15,7 +15,6 @@ images:
 pullSecrets:
   registry:
     registry: registry-harbor-registry.registry:5000
-    secret: tekton-registry
 
 vars:
   IMAGE: sample-golang
