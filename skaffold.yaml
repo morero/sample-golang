@@ -5,8 +5,7 @@ metadata:
 build:
   cluster:
     pullSecretName: kaniko-secret
-    #pullSecretPath: dockerconfig
-    pullSecretMountPath: kaniko-secret
+    pullSecretPath: kaniko-secret
     namespace: tekton-pipelines
     dockerConfig:
       secretName: tekton-registry
