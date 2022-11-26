@@ -11,8 +11,6 @@ RUN go build -a -installsuffix cgo -o binary ./cmd
 
 # Production stage
 FROM scratch
-ADD templates /templates
-ADD fonts /fonts
 COPY --from=Server /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=Server /usr/share/zoneinfo /usr/share/zoneinfo
 COPY --from=Server /server/binary ./
