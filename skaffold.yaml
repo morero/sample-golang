@@ -9,7 +9,7 @@ build:
     dockerConfig:
       path: /kaniko/.docker/config
   artifacts:
-  - image: registry-harbor-registry.registry:5000/sample-golang
+  - image: registry-harbor-registry.registry/sample-golang
     kaniko:
       cache: {}
       insecure: true
@@ -20,7 +20,7 @@ build:
 deploy:
   docker:
     images:
-    - registry-harbor-registry.registry:5000/sample-golang
+    - registry-harbor-registry.registry/sample-golang
 
 manifests:
   rawYaml:
