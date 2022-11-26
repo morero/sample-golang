@@ -8,9 +8,12 @@ build:
     namespace: tekton-pipelines
     dockerConfig:
       path: /kaniko/.docker/config
+    serviceAccount: kaniko-builder
   artifacts:
   - image: registry-harbor-registry.registry/sample-golang
     kaniko:
+      buildContext:
+        localDir: {}
       dockerfile: ./.ertia/deploy/Dockerfile
       cache: {}
       insecure: true
