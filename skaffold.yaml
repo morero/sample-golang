@@ -7,7 +7,7 @@ build:
     #pullSecretPath: /kaniko/.secret
     namespace: tekton-pipelines
     dockerConfig:
-      path: /kaniko/.docker
+      path: /kaniko/.docker/config
   artifacts:
   - image: registry-harbor-registry.registry:5000/sample-golang
     kaniko:
