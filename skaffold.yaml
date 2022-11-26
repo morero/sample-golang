@@ -6,8 +6,10 @@ build:
   cluster:
     pullSecretName: kaniko-secret
     #pullSecretPath: dockerconfig
-    #pullSecretMountPath: dockerconfig
+    pullSecretMountPath: kaniko-secret
     namespace: tekton-pipelines
+    dockerConfig:
+      secretName: tekton-registry
   artifacts:
   - image: registry-harbor-registry.registry:5000/sample-golang
     kaniko:
