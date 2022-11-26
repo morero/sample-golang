@@ -11,10 +11,11 @@ build:
   artifacts:
   - image: registry-harbor-registry.registry/sample-golang
     kaniko:
+      dockerfile: ./.ertia/deploy/Dockerfile
       cache: {}
       insecure: true
       insecurePull: true
-      cleanup: true
+      #cleanup: true
 
 
 deploy:
