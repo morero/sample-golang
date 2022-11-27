@@ -7,7 +7,7 @@ COPY go.* ./
 COPY . ./
 RUN go mod tidy
 RUN go mod vendor
-RUN go build -a -installsuffix cgo -o binary ./cmd
+RUN go build -a -installsuffix cgo -o binary .
 
 # Production stage
 FROM scratch
