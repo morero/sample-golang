@@ -13,11 +13,11 @@ images:
       serviceAccount: kaniko-builder
 
 pullSecrets:
-  registry:
-    name: devspace-pull-secrets
-    registry: registry-harbor-registry.registry:5000
-    serviceAccounts:
-      - kaniko-builder
+- registry: registry-harbor-registry.registry:5000
+  secret: devspace-pull-secrets
+  serviceAccounts: 
+    - default
+    - kaniko-builder
 
 vars:
   IMAGE: sample-golang
