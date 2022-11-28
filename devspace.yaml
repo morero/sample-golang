@@ -15,7 +15,8 @@ images:
 pullSecrets:
   harbor:
     registry: registry-harbor-registry.registry:5000
-    secret: devspace-pull-secrets
+    name: devspace-pull-secrets
+    #secret: devspace-pull-secrets
     serviceAccounts: 
       - default
       - kaniko-builder
