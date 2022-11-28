@@ -13,7 +13,8 @@ images:
       serviceAccount: kaniko-builder
 
 pullSecrets:
-  registry: registry-harbor-registry.registry:5000
+  harbor:
+    registry: registry-harbor-registry.registry:5000
     secret: devspace-pull-secrets
     serviceAccounts: 
       - default
