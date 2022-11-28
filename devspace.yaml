@@ -4,7 +4,7 @@ name: sample-golang
 images:
   # By default ./Dockerfile will be used
   app:
-    image: registry-harbor-registry.registry/${IMAGE}
+    image: registry-harbor-registry.registry:5000/${IMAGE}
     tags:
       - ${IMAGE_TAG}
     kaniko:
@@ -14,7 +14,7 @@ images:
 
 pullSecrets:
   harbor:
-    registry: registry-harbor-registry.registry
+    registry: registry-harbor-registry.registry:5000
     name: devspace-pull-secrets
     secret: devspace-pull-secrets
     serviceAccounts: 
