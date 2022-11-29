@@ -13,10 +13,10 @@ images:
       serviceAccount: kaniko-builder
 
 deployments:
-- name: helmDeploy
-  helm:
-    chart:
-      name: .ertia/deploy/app
+  helmDeploy:
+    helm:
+      chart:
+        name: .ertia/deploy/app
 
 pullSecrets:
   harbor:
