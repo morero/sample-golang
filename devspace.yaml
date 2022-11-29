@@ -18,6 +18,12 @@ deployments:
     helm:
       chart:
         name: .ertia/deploy/app
+      values:
+        containers:
+        - image: reg.tld/username/devspace
+        service:
+          ports:
+          - port: 3000
 
 pullSecrets:
   harbor:
