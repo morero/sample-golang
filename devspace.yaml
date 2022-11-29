@@ -8,6 +8,7 @@ images:
     tags:
       - ${IMAGE_TAG}
     kaniko:
+      cache: true
       insecure: true
       #inCluster: {}
       serviceAccount: kaniko-builder
