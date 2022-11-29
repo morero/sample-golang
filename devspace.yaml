@@ -21,6 +21,9 @@ pullSecrets:
       - default
       - kaniko-builder
 
+localRegistry:
+  enabled: false
+
 vars:
   IMAGE: sample-golang
   IMAGE_TAG: latest
