@@ -13,7 +13,7 @@ images:
       serviceAccount: kaniko-builder
 
 deployments:
-  helmDeploy:
+  helmdeploy:
     helm:
       chart:
         name: .ertia/deploy/app
