@@ -12,6 +12,12 @@ images:
       #inCluster: {}
       serviceAccount: kaniko-builder
 
+deployments:
+- name: helmDeploy
+  helm:
+    chart:
+      name: .ertia/deploy/app
+
 pullSecrets:
   harbor:
     registry: registry-harbor-registry.registry:5000
