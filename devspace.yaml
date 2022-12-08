@@ -28,7 +28,6 @@ deployments:
 pullSecrets:
   harbor:
     registry: registry-harbor-registry.registry:5000
-    secret: registry-docker-config
     serviceAccounts: 
       - default
       - kaniko-builder
