@@ -28,7 +28,6 @@ deployments:
 pullSecrets:
   harbor:
     registry: registry-harbor-registry.registry:5000
-    name: registry-docker-config
     secret: devspace-pull-secrets
     serviceAccounts: 
       - default
