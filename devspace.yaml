@@ -12,6 +12,7 @@ images:
       insecure: true
       #inCluster: {}
       serviceAccount: kaniko-builder
+      pullSecret: devspace-pull-secrets
 
 deployments:
   helmdeploy:
