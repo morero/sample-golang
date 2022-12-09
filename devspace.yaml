@@ -7,12 +7,21 @@ images:
     image: registry-harbor-registry.registry:5000/${IMAGE}
     tags:
       - ${IMAGE_TAG}
+    rebuildStrategy: ignoreContextChanges
+    createPullSecret: true
     kaniko:
       cache: true
       insecure: true
       #inCluster: {}
       serviceAccount: kaniko-builder
       pullSecret: devspace-pull-secrets
+      additionalMounts:
+      - mountPath: /kaniko/.docker/
+        secret:
+          name: devspace-pull-secrets
+          items:
+          - key: .dockerconfigjson
+            path: config.json
 
 deployments:
   helmdeploy:
