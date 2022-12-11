@@ -15,13 +15,13 @@ images:
       #inCluster: {}
       serviceAccount: kaniko-builder
       pullSecret: devspace-pull-secrets
-      additionalMounts:
-      - mountPath: /kaniko/.docker/
-        secret:
-          name: devspace-pull-secrets
-          items:
-          - key: .dockerconfigjson
-            path: config.json
+      #additionalMounts:
+      #- mountPath: /kaniko/.docker/
+      #  secret:
+      #    name: devspace-pull-secrets
+      #    items:
+      #    - key: .dockerconfigjson
+      #      path: config.json
 
 deployments:
   helmdeploy:
@@ -40,8 +40,8 @@ pullSecrets:
     registry: registry-harbor-registry.registry:5000
     secret: devspace-pull-secrets
     serviceAccounts: 
-      - default
       - kaniko-builder
+      - default
 
 localRegistry:
   enabled: false
