@@ -39,6 +39,8 @@ pullSecrets:
   harbor:
     registry: registry-harbor-registry.registry:5000
     secret: devspace-pull-secrets
+    username: "${REGISTRY_USER}"
+    password: "${REGISTRY_PASSWORD}"
     serviceAccounts: 
       - kaniko-builder
       - default
