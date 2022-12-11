@@ -38,6 +38,7 @@ deployments:
 pullSecrets:
   harbor:
     registry: registry-harbor-registry.registry:5000
+    name: docker-registry-secret
     secret: devspace-pull-secrets
     username: "${REGISTRY_USER}"
     password: "${REGISTRY_PASSWORD}"
