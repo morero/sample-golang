@@ -9,7 +9,7 @@ images:
       - ${IMAGE_TAG}
     rebuildStrategy: ignoreContextChanges
     createPullSecret: true
-    kaniko:
+    buildKit:
       cache: true
       insecure: true
       #inCluster: {}
