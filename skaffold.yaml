@@ -5,8 +5,8 @@ metadata:
 build:
   cluster:
     namespace: tekton-pipelines
-    #dockerConfig:
-    #  path: /kaniko/.docker/config
+    dockerConfig:
+      path: ~/.docker/config.json
     serviceAccount: kaniko-builder
   artifacts:
   - image: registry-harbor-registry.registry:5000/sample-golang
