@@ -9,19 +9,20 @@ images:
       - ${IMAGE_TAG}
     rebuildStrategy: ignoreContextChanges
     createPullSecret: true
-    buildKit:
-      cache: true
+    kaniko:
       insecure: true
-      #inCluster: {}
-      serviceAccount: kaniko-builder
+      #serviceAccount: kaniko-builder
       pullSecret: devspace-pull-secrets
-      #additionalMounts:
-      #- mountPath: /kaniko/.docker/
-      #  secret:
-      #    name: devspace-pull-secrets
-      #    items:
-      #    - key: .dockerconfigjson
-      #      path: config.json
+      additionalMounts:
+      - mountPath: /kaniko/.docker/
+        secret:
+          name: devspace-pull-secrets
+          items:
+          - key: .dockerconfigjson
+            path: config.json
+      args:
+      - --skip-tls-verify
+      - --skip-tls-verify-pull
 
 deployments:
   helmdeploy:
@@ -39,11 +40,19 @@ pullSecrets:
   harbor:
     registry: registry-harbor-registry.registry:5000
     secret: devspace-pull-secrets
-#    username: "${REGISTRY_USER}"
-#    password: "${REGISTRY_PASSWORD}"
     serviceAccounts: 
       - kaniko-builder
       - default
+
+pipelines:
+  deploy: |-
+    run_dependencies --all
+    ensure_pull_secrets --all
+    build_images --all
+    create_deployments --all  
+    # extend the default deploy pipeline
+    #install_go_dependencies
+    #install_crds
 
 localRegistry:
   enabled: false
