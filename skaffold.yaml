@@ -13,7 +13,7 @@ build:
     kaniko:
       buildContext:
         localDir: {}
-      dockerfile: ./.ertia/deploy/Dockerfile
+      dockerfile: ./Dockerfile
       cache: {}
       insecure: true
       insecurePull: true
