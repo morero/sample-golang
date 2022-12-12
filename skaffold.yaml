@@ -17,11 +17,10 @@ build:
       cache: {}
       insecure: true
       insecurePull: true
-      insecureRegistry: ["registry-harbor-registry.registry:5000"]
+      insecureRegistry: ["registry-harbor-registry.registry:5000", "registry-harbor-registry.registry"]
       cleanup: true
-      args:
-      - --skip-tls-verify
-      - --skip-tls-verify-pull
+      skipTLS: true
+      skipTLSVerifyPull: true
 
 
 deploy:
