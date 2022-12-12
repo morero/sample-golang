@@ -17,7 +17,8 @@ build:
       cache: {}
       insecure: true
       insecurePull: true
-      #cleanup: true
+      insecureRegistry: true
+      cleanup: true
       args:
       - --skip-tls-verify
       - --skip-tls-verify-pull
