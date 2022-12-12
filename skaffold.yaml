@@ -18,6 +18,9 @@ build:
       insecure: true
       insecurePull: true
       #cleanup: true
+      args:
+      - --skip-tls-verify
+      - --skip-tls-verify-pull
 
 
 deploy:
