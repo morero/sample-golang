@@ -17,7 +17,7 @@ build:
       cache: {}
       insecure: true
       insecurePull: true
-      insecureRegistry: true
+      insecureRegistry: ["registry-harbor-registry.registry:5000"]
       cleanup: true
       args:
       - --skip-tls-verify
