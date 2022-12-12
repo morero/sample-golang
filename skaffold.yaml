@@ -10,7 +10,7 @@ build:
     serviceAccount: kaniko-builder
   artifacts:
   - image: registry-harbor-registry.registry:5000/sample-golang
-    kaniko:
+    buildKit:
       buildContext:
         localDir: {}
       dockerfile: ./Dockerfile
