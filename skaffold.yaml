@@ -4,8 +4,7 @@ metadata:
   name: sample-golang
 build:
   cluster:
-    #namespace: tekton-pipelines
-    namespace: apps
+    namespace: tekton-pipelines
     dockerConfig:
       secretName: registry-docker-config
     serviceAccount: kaniko-builder
