@@ -4,13 +4,12 @@ metadata:
   name: sample-golang
 build:
   cluster:
-    #pullSecretPath: /kaniko/.secret
     namespace: tekton-pipelines
     #dockerConfig:
     #  path: /kaniko/.docker/config
     serviceAccount: kaniko-builder
   artifacts:
-  - image: registry-harbor-registry.registry/sample-golang
+  - image: registry-harbor-registry.registry:5000/sample-golang
     kaniko:
       buildContext:
         localDir: {}
@@ -24,7 +23,7 @@ build:
 deploy:
   docker:
     images:
-    - registry-harbor-registry.registry/sample-golang
+    - registry-harbor-registry.registry:5000/sample-golang
 
 manifests:
   rawYaml:
