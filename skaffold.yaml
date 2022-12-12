@@ -24,10 +24,6 @@ build:
 
   insecureRegistries: ["registry-harbor-registry.registry:5000", "registry-harbor-registry.registry"]
 
-deploy:
-  helm:
-    name: "sample-golang"
-    chartPath: ./ertia/deploy/app
 
 manifests:
   rawYaml:
