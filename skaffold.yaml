@@ -4,7 +4,8 @@ metadata:
   name: sample-golang
 build:
   cluster:
-    namespace: tekton-pipelines
+    #namespace: tekton-pipelines
+    namespace: apps
     dockerConfig:
       secretName: registry-docker-config
     serviceAccount: kaniko-builder
@@ -24,7 +25,12 @@ build:
 
   insecureRegistries: ["registry-harbor-registry.registry:5000", "registry-harbor-registry.registry"]
 
+deploy:
+  kpt: 
+    dir: k8s
+    name: sample-golang
+    namespace: apps
 
-manifests:
-  rawYaml:
-  - k8s/**
+#manifests:
+#  rawYaml:
+#  - k8s/**
