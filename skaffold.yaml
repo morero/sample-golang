@@ -26,9 +26,8 @@ build:
 
 deploy:
   kubectl: 
-    dir: k8s
     defaultNamespace: apps
 
-#manifests:
-#  rawYaml:
-#  - k8s/**
+manifests:
+  rawYaml:
+  - k8s/**
