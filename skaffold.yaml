@@ -25,10 +25,9 @@ build:
   insecureRegistries: ["registry-harbor-registry.registry:5000", "registry-harbor-registry.registry"]
 
 deploy:
-  kpt: 
+  kubectl: 
     dir: k8s
-    name: sample-golang
-    namespace: apps
+    defaultNamespace: apps
 
 #manifests:
 #  rawYaml:
