@@ -123,7 +123,6 @@ items:
   kind: ConfigMap
   metadata:
     name: sample-golang-logs
-    namespace: apps
     labels:
       grafana_dashboard: "1"
       helm.sh/chart: app-0.0.1

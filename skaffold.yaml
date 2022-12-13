@@ -24,9 +24,9 @@ build:
 
   insecureRegistries: ["registry-harbor-registry.registry:5000", "registry-harbor-registry.registry"]
 
-deploy:
-  kubectl: 
-    defaultNamespace: apps
+#deploy:
+#  kubectl: 
+#    defaultNamespace: default
 
 manifests:
   rawYaml:
