@@ -6,7 +6,7 @@ build:
   cluster:
     namespace: tekton-pipelines
     dockerConfig:
-      secretName: registry-docker-config
+      secretName: tekton-docker-config
     serviceAccount: kaniko-builder
   artifacts:
   - image: registry-harbor-registry.registry:5000/sample-golang
