@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: sample-golang-app
-          image: sample-golang
+          image: registry-harbor-registry.registry:5000/sample-golang
           ports:
             - containerPort: 80
 ---
