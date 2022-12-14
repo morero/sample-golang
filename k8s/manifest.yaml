@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: sample-golang-app
-          image: sample-golang-app
+          image: sample-golang
           ports:
             - containerPort: 80
 ---

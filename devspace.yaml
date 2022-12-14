@@ -10,7 +10,7 @@ images:
       # This will be replaced during build time with
       # something like dev-ads13as1-sA4ve. Each hashtag
       # represents a random character.
-      - dev-${devspace.git.commit}-#####  
+      - dev-${devspace.git.commit}-##### 
     rebuildStrategy: ignoreContextChanges
     createPullSecret: true
     kaniko:
