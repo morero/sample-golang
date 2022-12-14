@@ -7,6 +7,10 @@ images:
     image: registry-harbor-registry.registry:5000/${IMAGE}
     tags:
       - ${IMAGE_TAG}
+      # This will be replaced during build time with
+      # something like dev-ads13as1-sA4ve. Each hashtag
+      # represents a random character.
+      - dev-${devspace.git.commit}-#####  
     rebuildStrategy: ignoreContextChanges
     createPullSecret: true
     kaniko:
@@ -29,9 +33,16 @@ images:
 deployments:
   helmdeploy:
     helm:
+      chart:
+        name: component-chart
+        repo: https://charts.devspace.sh
       values:
         containers:
           - image: registry-harbor-registry.registry:5000/${IMAGE}
+        service:
+          ports: 
+            - port: 8080
+              containerPort: 80
 
 pullSecrets:
   harbor:
@@ -45,7 +56,7 @@ pipelines:
   deploy: |-
     run_dependencies --all
     ensure_pull_secrets --all
-    build_images --all
+    build_images --all -t $(git describe --always)
     create_deployments --all  
     # extend the default deploy pipeline
     #install_go_dependencies
