@@ -23,12 +23,15 @@ images:
       args:
       - --skip-tls-verify
       - --skip-tls-verify-pull
+      - --cache-dir=/tmp
+      - --verbosity=debug
 
 deployments:
   helmdeploy:
     helm:
-      chart:
-        name: .ertia/deploy/app
+      values:
+        containers:
+          - image: ${IMAGE}
 
 pullSecrets:
   harbor:
@@ -56,3 +59,11 @@ vars:
   IMAGE_TAG: latest
 
 
+dev:
+  my-dev:
+    imageSelector: ${IMAGE}
+    terminal: {}
+    ports:
+    - port: 8080
+    sync:
+    - path: ./

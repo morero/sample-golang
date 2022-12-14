@@ -1,241 +1,35 @@
----
-# Source: app/templates/serviceaccount.yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: sample-golang-app
-  labels:
-    helm.sh/chart: app-0.0.1
-    app.kubernetes.io/name: app
-    app.kubernetes.io/instance: sample-golang
-    app.kubernetes.io/version: "0.0.1"
-    app.kubernetes.io/managed-by: Helm
----
-# Source: app/templates/service.yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: sample-golang-app
-  labels:
-    helm.sh/chart: app-0.0.1
-    app.kubernetes.io/name: app
-    app.kubernetes.io/instance: sample-golang
-    app.kubernetes.io/version: "0.0.1"
-    app.kubernetes.io/managed-by: Helm
-spec:
-  type: ClusterIP
-  ports:
-    - port: 3000
-      targetPort: http
-      protocol: TCP
-      name: http
-  selector:
-    app.kubernetes.io/name: app
-    app.kubernetes.io/instance: sample-golang
----
-# Source: app/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sample-golang-app
   labels:
-    helm.sh/chart: app-0.0.1
-    app.kubernetes.io/name: app
-    app.kubernetes.io/instance: sample-golang
-    app.kubernetes.io/version: "0.0.1"
-    app.kubernetes.io/managed-by: Helm
+    app: sample-golang-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: app
-      app.kubernetes.io/instance: sample-golang
+      app: sample-golang-app
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: app
-        app.kubernetes.io/instance: sample-golang
+        app: sample-golang-app
     spec:
-      imagePullSecrets:
-        - name: tekton-harbor-regcred
-      serviceAccountName: sample-golang-app
-      securityContext:
-        {}
       containers:
-        - name: app
-          securityContext:
-            {}
-          image: "registry.demo.ertia.cloud/demo/app:latest"
-          imagePullPolicy: IfNotPresent
+        - name: sample-golang-app
+          image: sample-golang-app
           ports:
-            - name: http
-              containerPort: 3000
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /status
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /status
-              port: http
-          resources:
-            {}          
-          env:
-            null
+            - containerPort: 80
 ---
-# Source: app/templates/ingress.yaml
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: sample-golang-app
-  labels:
-    helm.sh/chart: app-0.0.1
-    app.kubernetes.io/name: app
-    app.kubernetes.io/instance: sample-golang
-    app.kubernetes.io/version: "0.0.1"
-    app.kubernetes.io/managed-by: Helm
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-production
-    kubernetes.io/ingress.class: traefik
-spec:
-  tls:
-    - hosts:
-        - "app.demo.ertia.cloud"
-      secretName: app-tls
-  rules:
-    - host: "app.demo.ertia.cloud"
-      http:
-        paths:
-          - path: /
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: sample-golang-app
-                port:
-                  number: 3000
----
-# Source: app/templates/dashboard-configmaps.yaml
 apiVersion: v1
-kind: ConfigMapList
-items:
-- apiVersion: v1
-  kind: ConfigMap
-  metadata:
-    name: sample-golang-logs
-    labels:
-      grafana_dashboard: "1"
-      helm.sh/chart: app-0.0.1
-      app.kubernetes.io/name: app
-      app.kubernetes.io/instance: sample-golang
-      app.kubernetes.io/version: "0.0.1"
-      app.kubernetes.io/managed-by: Helm
-    annotations:
-      grafana_folder: "/tmp/dashboards/sample-golang"
-  data:
-    logs.json: |-
-      
-      {
-        "annotations": {
-          "list": [
-            {
-              "builtIn": 1,
-              "datasource": "-- Grafana --",
-              "enable": true,
-              "hide": true,
-              "iconColor": "rgba(0, 211, 255, 1)",
-              "name": "Annotations & Alerts",
-              "target": {
-                "limit": 100,
-                "matchAny": false,
-                "tags": [],
-                "type": "dashboard"
-              },
-              "type": "dashboard"
-            }
-          ]
-        },
-        "editable": true,
-        "fiscalYearStartMonth": 0,
-        "graphTooltip": 0,
-        "id": 157,
-        "links": [],
-        "liveNow": false,
-        "panels": [
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "${logsource}"
-            },
-            "description": "",
-            "gridPos": {
-              "h": 24,
-              "w": 24,
-              "x": 0,
-              "y": 0
-            },
-            "id": 2,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": true,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": true,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "${logsource}"
-                },
-                "expr": "{app=\"app\"}",
-                "instant": false,
-                "range": true,
-                "refId": "A",
-                "resolution": 1
-              }
-            ],
-            "title": "Logs",
-            "type": "logs"
-          }
-        ],
-        "refresh": "5m",
-        "schemaVersion": 34,
-        "style": "dark",
-        "tags": [],
-        "templating": {
-          "list": [
-            {
-              "current": {
-                "selected": true,
-                "text": "Loki",
-                "value": "Loki"
-              },
-              "hide": 2,
-              "includeAll": false,
-              "label": "Log Source",
-              "multi": false,
-              "name": "logsource",
-              "options": [],
-              "query": "loki",
-              "refresh": 1,
-              "regex": "",
-              "skipUrlSync": false,
-              "type": "datasource"
-            }
-          ]
-        },
-        "time": {
-          "from": "now-5m",
-          "to": "now"
-        },
-        "timepicker": {},
-        "timezone": "browser",
-        "title": "Logs",
-        "uid": "app-logs",
-        "version": 1,
-        "weekStart": ""
-      }
+kind: Service
+metadata:
+  name: sample-golang-svc
+  labels:
+    app: sample-golang-app
+spec:
+  clusterIP: None
+  ports:
+    - port: 80
+      name: sample-golang-app
+  selector:
+    app: sample-golang-app
