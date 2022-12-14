@@ -31,7 +31,7 @@ deployments:
     helm:
       values:
         containers:
-          - image: ${IMAGE}
+          - image: registry-harbor-registry.registry:5000/${IMAGE}
 
 pullSecrets:
   harbor:
