@@ -59,11 +59,11 @@ vars:
   IMAGE_TAG: latest
 
 
-dev:
-  my-dev:
-    imageSelector: ${IMAGE}
-    terminal: {}
-    ports:
-    - port: 8080
-    sync:
-    - path: ./
+#dev:
+#  my-dev:
+#    imageSelector: ${IMAGE}
+#    terminal: {}
+#    ports:
+ #   - port: 8080
+ #   sync:
+ #   - path: ./
