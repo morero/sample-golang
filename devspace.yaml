@@ -38,7 +38,7 @@ deployments:
         repo: https://charts.devspace.sh
       values:
         containers:
-          - image: registry.local.ertia.cloud/${IMAGE}
+          - image: registry.7xduqbbi227sc222.ertia.cloud/${IMAGE}
         service:
           ports: 
             - port: 8080
