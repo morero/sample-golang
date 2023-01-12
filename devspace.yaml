@@ -4,7 +4,7 @@ name: sample-golang
 images:
   # By default ./Dockerfile will be used
   app:
-    image: registry.7xhg4dhk249nu222.ertia.cloud/${IMAGE}
+    image: registry.7xhg4dhk249nu222.ertia.cloud/library/${IMAGE}
     tags:
       - ${IMAGE_TAG}
       # This will be replaced during build time with
@@ -38,7 +38,7 @@ deployments:
         repo: https://charts.devspace.sh
       values:
         containers:
-          - image: registry.7xhg4dhk249nu222.ertia.cloud/${IMAGE}
+          - image: registry.7xhg4dhk249nu222.ertia.cloud/library/${IMAGE}
         service:
           ports: 
             - port: 8080
