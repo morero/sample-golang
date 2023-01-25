@@ -1,0 +1,11 @@
+{
+        "auths": {
+                "registry.local.ertia.cloud": {
+                        "auth": "cmVnaXN0cnk6cmVnaXN0cnk="
+                },
+                "trow-svc.registry:8000": {
+                        "auth": "cmVnaXN0cnk6cmVnaXN0cnk="
+                }
+        }
+}
+

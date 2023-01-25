@@ -1,0 +1,16 @@
+apiVersion: v1
+data:
+  .dockerconfigjson: ewogICJhdXRocyI6IHsKICAgICJyZWdpc3RyeS43eGhnNGRoazI0OW51MjIyLmVydGlhLmNsb3VkIjogewogICAgICAidXNlcm5hbWUiOiAiZXJ0aWEiLAogICAgICAicGFzc3dvcmQiOiAiOWZmNjE0NjY3N2NlNTk2MzM2YTU2YThlZjNlZjY5ZWEiLAogICAgICAiYXV0aCI6ICJaWEowYVdFNk9XWm1OakUwTmpZM04yTmxOVGsyTXpNMllUVTJZVGhsWmpObFpqWTVaV0U9IiwKICAgICAgImVtYWlsIjogInJlZ2lzdHJ5QGVydGlhLmlvIgogICAgfQogIH0KfQo=
+  config.json: ewogICJhdXRocyI6IHsKICAgICJyZWdpc3RyeS43eGhnNGRoazI0OW51MjIyLmVydGlhLmNsb3VkIjogewogICAgICAidXNlcm5hbWUiOiAiZXJ0aWEiLAogICAgICAicGFzc3dvcmQiOiAiOWZmNjE0NjY3N2NlNTk2MzM2YTU2YThlZjNlZjY5ZWEiLAogICAgICAiYXV0aCI6ICJaWEowYVdFNk9XWm1OakUwTmpZM04yTmxOVGsyTXpNMllUVTJZVGhsWmpObFpqWTVaV0U9IiwKICAgICAgImVtYWlsIjogInJlZ2lzdHJ5QGVydGlhLmlvIgogICAgfQogIH0KfQo=
+kind: Secret
+metadata:
+  annotations:
+    config.k8s.io/owning-inventory: 28de2829-34dd-4b7f-987d-a6aa558d0ab5
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Secret","metadata":{"annotations":{"config.k8s.io/owning-inventory":"28de2829-34dd-4b7f-987d-a6aa558d0ab5"},"name":"tekton-docker-config","namespace":"tekton-pipelines"},"stringData":{".dockerconfigjson":"{\n  \"auths\": {\n    \"registry.7xhg4dhk249nu222.ertia.cloud\": {\n      \"username\": \"ertia\",\n      \"password\": \"9ff6146677ce596336a56a8ef3ef69ea\",\n      \"auth\": \"ZXJ0aWE6OWZmNjE0NjY3N2NlNTk2MzM2YTU2YThlZjNlZjY5ZWE=\",\n      \"email\": \"registry@ertia.io\"\n    }\n  }\n}\n","config.json":"{\n  \"auths\": {\n    \"registry.7xhg4dhk249nu222.ertia.cloud\": {\n      \"username\": \"ertia\",\n      \"password\": \"9ff6146677ce596336a56a8ef3ef69ea\",\n      \"auth\": \"ZXJ0aWE6OWZmNjE0NjY3N2NlNTk2MzM2YTU2YThlZjNlZjY5ZWE=\",\n      \"email\": \"registry@ertia.io\"\n    }\n  }\n}\n"},"type":"kubernetes.io/dockerconfigjson"}
+  creationTimestamp: "2023-01-12T07:51:05Z"
+  name: tekton-docker-config
+  namespace: tekton-pipelines
+  resourceVersion: "2133"
+  uid: 4da89533-9bea-490f-9bcb-7f2ba6b954a9
+type: kubernetes.io/dockerconfigjson

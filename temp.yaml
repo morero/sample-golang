@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+  .dockerconfigjson: ewogICJhdXRocyI6IHsKICAgICJyZWdpc3RyeS1oYXJib3ItY29yZS5yZWdpc3RyeS5zdmMuY2x1c3Rlci5sb2NhbCI6IHsKICAgICAgInVzZXJuYW1lIjoicm9ib3QkdGVrdG9uIiwKICAgICAgInBhc3N3b3JkIjoiY291bGRfbm90X2dldF90ZWt0b25faGFyYm9yX3Rva2VuIiwKICAgICAgImVtYWlsIjogInRla3RvbkBlcnRpYS5pbyIsCiAgICAgICJhdXRoIjoiY205aWIzUWtkR1ZyZEc5dU9tTnZkV3hrWDI1dmRGOW5aWFJmZEdWcmRHOXVYMmhoY21KdmNsOTBiMnRsYmc9PSIKICAgIH0sCiAgICAicmVnaXN0cnkuY291bGQubm90LmZpbmQuZG9tYWluIjogewogICAgICAidXNlcm5hbWUiOiJyb2JvdCR0ZWt0b24iLAogICAgICAicGFzc3dvcmQiOiJjb3VsZF9ub3RfZ2V0X3Rla3Rvbl9oYXJib3JfdG9rZW4iLAogICAgICAiZW1haWwiOiAidGVrdG9uQGVydGlhLmlvIiwKICAgICAgImF1dGgiOiJjbTlpYjNRa2RHVnJkRzl1T21OdmRXeGtYMjV2ZEY5blpYUmZkR1ZyZEc5dVgyaGhjbUp2Y2w5MGIydGxiZz09IgogICAgfQogIH0KfQ==
+  config.json: ewogICJhdXRocyI6IHsKICAgICJyZWdpc3RyeS1oYXJib3ItY29yZS5yZWdpc3RyeS5zdmMuY2x1c3Rlci5sb2NhbCI6IHsKICAgICAgInVzZXJuYW1lIjoicm9ib3QkdGVrdG9uIiwKICAgICAgInBhc3N3b3JkIjoiY291bGRfbm90X2dldF90ZWt0b25faGFyYm9yX3Rva2VuIiwKICAgICAgImVtYWlsIjogInRla3RvbkBlcnRpYS5pbyIsCiAgICAgICJhdXRoIjoiY205aWIzUWtkR1ZyZEc5dU9tTnZkV3hrWDI1dmRGOW5aWFJmZEdWcmRHOXVYMmhoY21KdmNsOTBiMnRsYmc9PSIKICAgIH0sCiAgICAicmVnaXN0cnkuY291bGQubm90LmZpbmQuZG9tYWluIjogewogICAgICAidXNlcm5hbWUiOiJyb2JvdCR0ZWt0b24iLAogICAgICAicGFzc3dvcmQiOiJjb3VsZF9ub3RfZ2V0X3Rla3Rvbl9oYXJib3JfdG9rZW4iLAogICAgICAiZW1haWwiOiAidGVrdG9uQGVydGlhLmlvIiwKICAgICAgImF1dGgiOiJjbTlpYjNRa2RHVnJkRzl1T21OdmRXeGtYMjV2ZEY5blpYUmZkR1ZyZEc5dVgyaGhjbUp2Y2w5MGIydGxiZz09IgogICAgfQogIH0KfQ==
+kind: Secret
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{".dockerconfigjson":"ewogICJhdXRocyI6IHsKICAgICJyZWdpc3RyeS1oYXJib3ItY29yZS5yZWdpc3RyeS5zdmMuY2x1c3Rlci5sb2NhbCI6IHsKICAgICAgInVzZXJuYW1lIjoicm9ib3QkdGVrdG9uIiwKICAgICAgInBhc3N3b3JkIjoiY291bGRfbm90X2dldF90ZWt0b25faGFyYm9yX3Rva2VuIiwKICAgICAgImVtYWlsIjogInRla3RvbkBlcnRpYS5pbyIsCiAgICAgICJhdXRoIjoiY205aWIzUWtkR1ZyZEc5dU9tTnZkV3hrWDI1dmRGOW5aWFJmZEdWcmRHOXVYMmhoY21KdmNsOTBiMnRsYmc9PSIKICAgIH0sCiAgICAicmVnaXN0cnkuY291bGQubm90LmZpbmQuZG9tYWluIjogewogICAgICAidXNlcm5hbWUiOiJyb2JvdCR0ZWt0b24iLAogICAgICAicGFzc3dvcmQiOiJjb3VsZF9ub3RfZ2V0X3Rla3Rvbl9oYXJib3JfdG9rZW4iLAogICAgICAiZW1haWwiOiAidGVrdG9uQGVydGlhLmlvIiwKICAgICAgImF1dGgiOiJjbTlpYjNRa2RHVnJkRzl1T21OdmRXeGtYMjV2ZEY5blpYUmZkR1ZyZEc5dVgyaGhjbUp2Y2w5MGIydGxiZz09IgogICAgfQogIH0KfQ=="},"kind":"Secret","metadata":{"annotations":{"meta.helm.sh/release-name":"ertia-spreader","meta.helm.sh/release-namespace":"tekton-pipelines"},"creationTimestamp":"2023-01-12T07:48:40Z","labels":{"app.kubernetes.io/instance":"ertia-spreader","app.kubernetes.io/managed-by":"Helm","app.kubernetes.io/name":"ertia-secret-spreader","app.kubernetes.io/version":"0.0.1","helm.sh/chart":"ertia-secret-spreader-0.0.1"},"name":"tekton-harbor-regcred","namespace":"tekton-pipelines","resourceVersion":"962","uid":"f6761f32-ab18-4028-8e1e-12c8e2e30cbc"},"type":"kubernetes.io/dockerconfigjson"}
+    meta.helm.sh/release-name: ertia-spreader
+    meta.helm.sh/release-namespace: tekton-pipelines
+  creationTimestamp: "2023-01-12T10:46:37Z"
+  labels:
+    app.kubernetes.io/instance: ertia-spreader
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: ertia-secret-spreader
+    app.kubernetes.io/version: 0.0.1
+    helm.sh/chart: ertia-secret-spreader-0.0.1
+  name: tekton-harbor-regcred
+  namespace: tekton-pipelines
+  resourceVersion: "47319"
+  uid: c272c0a3-5465-407f-bb11-5e4eb06c04cb
+type: kubernetes.io/dockerconfigjson
