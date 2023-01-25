@@ -5,6 +5,9 @@
                 },
                 "trow-svc.registry:8000": {
                         "auth": "cmVnaXN0cnk6cmVnaXN0cnk="
+                },
+                "registry.7xqfswmw24tga222.ertia.cloud": {
+                        "auth": "cmVnaXN0cnk6cmVnaXN0cnk="
                 }
         }
 }

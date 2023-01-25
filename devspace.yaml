@@ -5,7 +5,7 @@ images:
   # By default ./Dockerfile will be used
   app:
     #image: registry.7xhg4dhk249nu222.ertia.cloud/demo/${IMAGE}
-    image: trow-svc.registry:8000/demo/${IMAGE}
+    image: registry.7xqfswmw24tga222.ertia.cloud/demo/${IMAGE}
     tags:
       - ${IMAGE_TAG}
       # This will be replaced during build time with
@@ -39,7 +39,7 @@ deployments:
         repo: https://charts.devspace.sh
       values:
         containers:
-          - image: trow-svc.registry:8000/demo/${IMAGE}
+          - image: registry.7xqfswmw24tga222.ertia.cloud/demo/${IMAGE}
           # - image: registry.7xhg4dhk249nu222.ertia.cloud/demo/${IMAGE}
         service:
           ports: 
@@ -48,7 +48,7 @@ deployments:
 
 pullSecrets:
   harbor:
-    registry: trow-svc.registry:8000 #registry.7xhg4dhk249nu222.ertia.cloud
+    registry: registry.7xqfswmw24tga222.ertia.cloud #registry.7xhg4dhk249nu222.ertia.cloud
     secret: devspace-pull-secrets
     serviceAccounts: 
       - kaniko-builder
